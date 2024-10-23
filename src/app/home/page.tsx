@@ -11,7 +11,7 @@ export default function Home() {
           </h1>
           <h2 className="text-[22px] tracking-wide text-[#05555c] mb-4">Web Designer & Developer</h2>
           <p className="max-w-[600px] mx-auto text-[#186f78] leading-6 mb-6 transition-all duration-300">
-            As a passionate web designer and developer, I create visually stunning and user-friendly websites. My strong foundation in design principles and programming ensures that each project combines creativity with functionality, delivering seamless performance across all devices. Let's collaborate to bring your vision to life!
+            As a passionate web designer and developer, I create visually stunning and user-friendly websites. My strong foundation in design principles and programming ensures that each project combines creativity with functionality, delivering seamless performance across all devices. Let&apos;s collaborate to bring your vision to life!
           </p>
           <button className="bg-[#05555c] text-[#f6f9fe] rounded-full text-[16px] py-3 px-8 tracking-wide transition-all duration-300 hover:bg-[#186f78] shadow-lg hover:shadow-xl">
             Hire Me
