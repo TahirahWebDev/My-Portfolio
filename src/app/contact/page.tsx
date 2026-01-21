@@ -1,100 +1,122 @@
 import React from 'react';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
-import Navbar from '../components/Navbar';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact: React.FC = () => {
   return (
-    <>
-      <Navbar />
-      <section className="w-full mt-8 py-20 px-5 md:px-8 contact-form">
-        <div className="flex flex-col md:flex-row bg-[#f6f9fe] contact-row">
-          {/* Left Column Starts */}
-          <div className="flex-[100%] md:flex-[40%] min-w-[320px] p-8 md:p-12 column-1 mb-8 md:mb-0">
-            <div className="contactTitle mb-6">
-              <h2 className="relative text-3xl text-[#05555c] inline-block mb-6">
-                Get In Touch
-                <span className="absolute left-0 top-[120%] w-full h-[1px] bg-[#277b6d]"></span>
-                <span className="absolute left-0 top-[119%] w-[40%] h-[3px] bg-[#05555c]"></span>
-              </h2>
-              <p className="text-[#3f7277] text-sm leading-5 mb-5">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
-              </p>
-            </div>
+    <main className="min-h-screen bg-[#020617] text-slate-200">
 
-            <form className="form-1">
-              <div className="relative mb-10 inputGroup">
-                <input
-                  type="text"
-                  required
-                  className="w-full text-lg py-2 bg-[#f6f9fe] text-[#05555c] border-b border-[#3f7277] outline-none"
-                />
-                <label className="absolute left-0 bottom-1 text-[#3f7277] text-sm transition-transform duration-300 pointer-events-none">
-                  Your Name
-                </label>
+      <section className="max-w-7xl mx-auto py-32 px-6">
+        {/* Header */}
+        <div className="mb-16 text-center md:text-left">
+          <h2 className="text-[#2dd4bf] font-mono tracking-widest text-sm uppercase mb-2">Connection</h2>
+          <h1 className="text-4xl md:text-5xl font-black text-white">Get In <span className="text-[#05555c]">Touch</span></h1>
+          <p className="text-slate-400 mt-4 max-w-xl">
+            Have a project in mind or want to discuss the future of <strong>Agentic AI</strong>?
+            Let&apos;s build something intelligent together.
+          </p>
+        </div>
+
+        <div className="flex flex-col md:flex-row gap-12 bg-slate-900/40 backdrop-blur-xl rounded-3xl border border-slate-800 overflow-hidden shadow-2xl">
+
+          {/* Left Column: Contact Info & Socials */}
+          <div className="flex-[40%] p-8 md:p-12 bg-gradient-to-br from-slate-900 to-[#020617]">
+            <div className="space-y-10">
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
+                <div className="space-y-6">
+                  <div className="flex items-center gap-4 group">
+                    <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-[#2dd4bf] group-hover:bg-[#05555c] group-hover:text-white transition-all">
+                      <FaEnvelope size={20} />
+                    </div>
+                    <div>
+                      <p className="text-xs text-slate-500 uppercase font-bold">Email Me</p>
+                      <p className="text-slate-200">roohitahirah@gmail.com</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4 group">
+                    <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-[#2dd4bf] group-hover:bg-[#05555c] group-hover:text-white transition-all">
+                      <FaMapMarkerAlt size={20} />
+                    </div>
+                    <div>
+                      <p className="text-xs text-slate-500 uppercase font-bold">Location</p>
+                      <p className="text-slate-200">Karachi, Pakistan</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div className="relative mb-10 inputGroup">
-                <input
-                  type="email"
-                  required
-                  className="w-full text-lg py-2 bg-[#f6f9fe] text-[#05555c] border-b border-[#3f7277] outline-none"
-                />
-                <label className="absolute left-0 bottom-1 text-[#3f7277] text-sm transition-transform duration-300 pointer-events-none">
-                  Email
-                </label>
+              {/* Social Media */}
+              <div>
+                <h4 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-6">Social Ecosystem</h4>
+                <div className="flex gap-4">
+                  {[
+                    { icon: <FaFacebookF />, link: "https://web.facebook.com/profile.php?id=100094042236553" },
+                    { icon: <FaTwitter />, link: "https://twitter.com/Tahirah_webDev" },
+                    { icon: <FaInstagram />, link: "https://instagram.com/tahirah_roohi" },
+                    { icon: <FaLinkedinIn />, link: "https://linkedin.com/in/tahirah-roohi/" }
+                  ].map((social, i) => (
+                    <a
+                      key={i}
+                      href={social.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-11 h-11 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-[#05555c] hover:text-white hover:-translate-y-1 transition-all shadow-lg"
+                    >
+                      {social.icon}
+                    </a>
+                  ))}
+                </div>
               </div>
-            </form>
-
-            <div className="flex items-center flex-wrap pt-8 contactSocialMedia">
-              <a
-                href="https://web.facebook.com/profile.php?id=100094042236553"
-                className="w-[35px] h-[35px] text-center rounded-md bg-[#05555c] transition-transform duration-300 flex items-center justify-center ml-4"
-              >
-                <FaFacebookF className="text-[#f6f9fe] text-lg leading-[35px]" />
-              </a>
-              <a
-                href="https://twitter.com/Tahirah_webDev"
-                className="w-[35px] h-[35px] text-center rounded-md bg-[#05555c] transition-transform duration-300 flex items-center justify-center ml-4"
-              >
-                <FaTwitter className="text-[#f6f9fe] text-lg leading-[35px]" />
-              </a>
-              <a
-                href="https://instagram.com/tahirah_roohi?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"
-                className="w-[35px] h-[35px] text-center rounded-md bg-[#05555c] transition-transform duration-300 flex items-center justify-center ml-4"
-              >
-                <FaInstagram className="text-[#f6f9fe] text-lg leading-[35px]" />
-              </a>
-              <a
-                href="https://linkedin.com/in/tahirah-roohi/"
-                className="w-[35px] h-[35px] text-center rounded-md bg-[#05555c] transition-transform duration-300 flex items-center justify-center ml-4"
-              >
-                <FaLinkedinIn className="text-[#f6f9fe] text-lg leading-[35px]" />
-              </a>
             </div>
           </div>
-          {/* Left Column Ends */}
 
-          {/* Right Column Starts */}
-          <div className="flex-[100%] md:flex-[60%] column-2">
-            <form className="form-2 h-full pt-12">
-              <div className="relative w-full h-full border-l border-[#3f7277] inputGroup">
+          {/* Right Column: Interactive Form */}
+          <div className="flex-[60%] p-8 md:p-12">
+            <form className="space-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="relative group">
+                  <input
+                    type="text"
+                    required
+                    placeholder=" "
+                    className="peer w-full bg-transparent border-b-2 border-slate-700 py-3 text-white outline-none focus:border-[#2dd4bf] transition-all"
+                  />
+                  <label className="absolute left-0 top-3 text-slate-500 text-sm transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-[#2dd4bf] peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs">
+                    Full Name
+                  </label>
+                </div>
+                <div className="relative group">
+                  <input
+                    type="email"
+                    required
+                    placeholder=" "
+                    className="peer w-full bg-transparent border-b-2 border-slate-700 py-3 text-white outline-none focus:border-[#2dd4bf] transition-all"
+                  />
+                  <label className="absolute left-0 top-3 text-slate-500 text-sm transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-[#2dd4bf] peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs">
+                    Email Address
+                  </label>
+                </div>
+              </div>
+
+              <div className="relative group pt-4">
                 <textarea
                   required
-                  className="w-full min-h-[200px] resize-none border-none outline-none bg-[#f6f9fe] text-[#05555c] px-5 pb-0 mb-0 text-lg"
+                  placeholder=" "
+                  className="peer w-full bg-transparent border-b-2 border-slate-700 py-3 min-h-[150px] text-white outline-none focus:border-[#2dd4bf] transition-all resize-none"
                 />
-                <label className="absolute top-[25px] left-5 text-[#3f7277] text-sm transition-transform duration-300 pointer-events-none">
-                  Say Something
+                <label className="absolute left-0 top-7 text-slate-500 text-sm transition-all peer-focus:top-0 peer-focus:text-xs peer-focus:text-[#2dd4bf] peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs">
+                  Project Details / Message
                 </label>
-                <button className="w-full h-[50px] border-none outline-none bg-[#05555c] text-[#f6f9fe] text-lg leading-[50px] cursor-pointer transition-colors duration-300 hover:bg-[#186f78] absolute bottom-0 left-0 mt-5 form-button">
-                  MESSAGE ME
-                </button>
               </div>
+
+              <button className="w-full py-4 bg-gradient-to-r from-[#05555c] to-[#186f78] text-white rounded-xl font-bold tracking-widest hover:shadow-[0_0_20px_rgba(45,212,191,0.2)] hover:-translate-y-0.5 transition-all active:scale-95">
+                SEND MESSAGE
+              </button>
             </form>
           </div>
-          {/* Right Column Ends */}
         </div>
       </section>
-    </>
+    </main>
   );
 };
 

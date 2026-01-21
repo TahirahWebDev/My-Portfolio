@@ -1,23 +1,23 @@
-import Home from './home/page';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Home from './components/Home';
 import About from './about/page';
 import Services from './services/page'
-import Skills from './skills/page';
+import Skills from './components/Skills'
 import Portfolio from './portfolio/page';
 import Contact from './contact/page';
+import Testimonials from './components/Testimonials';
+import Education from './education/page';
 
 export default function MainPage() {
   return (
     <>
-      <Navbar />
       <Home />
       <About />
       <Services />
+      <Education />
       <Skills />
       <Portfolio />
+      <Testimonials />
       <Contact />
-      <Footer />
     </>
   );
 }
