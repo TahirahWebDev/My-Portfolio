@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image'; // Import Next.js Image component
+import Image from 'next/image';
 import { FaGithub, FaLinkedinIn, FaTwitter, FaCode, FaRobot } from 'react-icons/fa';
 
 const Footer = () => {
@@ -9,11 +9,11 @@ const Footer = () => {
     <footer className="w-full bg-[#020617] border-t border-slate-800 pt-16 pb-8 px-6 md:px-20">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
         
-        {/* Brand Section with Image Logo */}
+        {/* Brand Section */}
         <div className="space-y-6">
           <Link href="/" className="relative block h-12 w-40 transition-transform hover:scale-105">
             <Image
-              src="/favicon.png" // Ensure this matches the filename in your public folder
+              src="/favicon.png" 
               alt="Tahirah Roohi Logo"
               fill
               className="object-contain object-left"
@@ -74,15 +74,11 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="max-w-7xl mx-auto pt-8 border-t border-slate-800/50 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-slate-500 text-xs text-center md:text-left">
+      {/* Bottom Bar - FIXED AND CENTERED */}
+      <div className="max-w-7xl mx-auto pt-8 border-t border-slate-800/50 flex justify-center items-center">
+        <p className="text-slate-500 text-xs text-center">
           © {currentYear} <span className="text-slate-300">Tahirah Roohi</span>. Built with Next.js & Tailwind.
         </p>
-        <div className="flex gap-6 text-xs text-slate-500">
-          <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-          <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-        </div>
       </div>
     </footer>
   );

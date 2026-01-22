@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from 'react';
-import Navbar from '../components/Navbar';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact: React.FC = () => {
@@ -15,7 +14,7 @@ const Contact: React.FC = () => {
     const formData = new FormData(form);
 
     // Your Web3Forms Access Key
-    formData.append("access_key", "69d63c82-3f09-46a5-8278-e45f2977d25e");
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -40,7 +39,6 @@ const Contact: React.FC = () => {
 
   return (
     <main className="min-h-screen bg-[#020617] text-slate-200">
-      <Navbar />
 
       <section className="max-w-7xl mx-auto py-32 px-6">
         {/* Centered Header Section */}

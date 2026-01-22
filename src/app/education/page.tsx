@@ -1,4 +1,3 @@
-import Navbar from "../components/Navbar";
 import { FaGraduationCap, FaAward, FaCode } from "react-icons/fa";
 
 const Education = () => {
@@ -39,9 +38,9 @@ const Education = () => {
 
   return (
     <main className="min-h-screen bg-[#020617] text-slate-200">
-      <Navbar />
+
       
-      <section className="max-w-4xl mx-auto py-32 px-6">
+      <section className="max-w-6xl mx-auto py-32 px-6">
         <header className="text-center mb-20">
           <h2 className="text-[#2dd4bf] font-mono tracking-widest text-sm uppercase mb-2">My Background</h2>
           <h1 className="text-4xl md:text-5xl font-black text-white mb-4">Academic <span className="text-[#05555c]">Journey</span></h1>
@@ -51,28 +50,39 @@ const Education = () => {
           </p>
         </header>
 
-        <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-800 before:to-transparent">
-          {education.map((edu, index) => (
-            <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-              {/* Icon Dot */}
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border border-slate-800 bg-slate-900 text-[#2dd4bf] absolute left-0 md:left-1/2 md:-ml-5 transition-all group-hover:border-[#2dd4bf] shadow-xl z-10">
-                {edu.icon}
-              </div>
+        {/* Timeline Container */}
+        <div className="relative max-w-5xl mx-auto">
+          
+          {/* Vertical Line - Hidden on very small screens, centered on MD+ */}
+          <div className="absolute left-4 md:left-1/2 h-full w-0.5 bg-gradient-to-b from-transparent via-slate-800 to-transparent transform -translate-x-1/2"></div>
 
-              {/* Content Card */}
-              <div className="w-[calc(100%-4rem)] md:w-[45%] p-6 rounded-3xl border border-slate-800 bg-slate-900/40 backdrop-blur-sm hover:border-[#2dd4bf]/30 transition-all shadow-lg">
-                <div className="flex justify-between items-start mb-2">
-                  <span className="text-[#2dd4bf] font-mono text-xs font-bold">{edu.duration}</span>
-                  <span className="px-2 py-1 rounded-md bg-slate-800 text-slate-400 text-[10px] uppercase font-bold tracking-widest border border-slate-700">
-                    {edu.status}
-                  </span>
+          <div className="space-y-12">
+            {education.map((edu, index) => (
+              <div key={index} className={`relative flex flex-col md:flex-row items-center w-full ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+                
+                {/* Empty space for alternating desktop view */}
+                <div className="hidden md:block w-1/2"></div>
+
+                {/* Icon Dot - Fixed positioning for mobile and desktop */}
+                <div className="absolute left-4 md:left-1/2 flex items-center justify-center w-10 h-10 rounded-full border border-slate-800 bg-slate-900 text-[#2dd4bf] transform -translate-x-1/2 transition-all group-hover:border-[#2dd4bf] shadow-xl z-10">
+                  {edu.icon}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-1 leading-tight">{edu.degree}</h3>
-                <p className="text-[#05555c] font-medium mb-4">{edu.institution}</p>
-                <p className="text-slate-400 text-sm leading-relaxed">{edu.details}</p>
+
+                {/* Content Card - Added ml-12 for mobile to clear the icon */}
+                <div className="ml-12 md:ml-0 w-[calc(100%-3rem)] md:w-[42%] p-6 rounded-3xl border border-slate-800 bg-slate-900/40 backdrop-blur-sm hover:border-[#2dd4bf]/30 transition-all shadow-lg group">
+                  <div className="flex flex-col sm:flex-row justify-between items-start mb-4 gap-2">
+                    <span className="text-[#2dd4bf] font-mono text-xs font-bold">{edu.duration}</span>
+                    <span className="px-2 py-1 rounded-md bg-slate-800 text-slate-400 text-[10px] uppercase font-bold tracking-widest border border-slate-700">
+                      {edu.status}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-1 leading-tight">{edu.degree}</h3>
+                  <p className="text-[#05555c] font-medium mb-4">{edu.institution}</p>
+                  <p className="text-slate-400 text-sm leading-relaxed">{edu.details}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
     </main>
